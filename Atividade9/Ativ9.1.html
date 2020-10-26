@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9.1</title>
+</head>
+
+<body>
+    <script>
+            function Retangulo(x,y) {
+            this.x=x;
+            this.y=y;
+
+            this.returnArea = function(){
+                return (x*y);
+            }
+            }
+            var num1 = parseFloat(prompt("Digite o primeiro número: "));
+            var num2 = parseFloat(prompt("Digite o segundo número: "));
+            var Retangulo = new Retangulo(num1,num2)
+            alert("Area do Retangulo é: " + Retangulo.returnArea());
+    </script>
+
+</body>
+
+</html>
