@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9.2</title>
+</head>
+
+<body>
+    <script>
+            function Conta() { // “superclasse”
+            var nomeCorrentista,banco,numeroConta,saldo;
+            this.getNome = function () {
+                return nomeCorrentista;
+            };
+            this.setNome = function (value) {
+                nomeCorrentista = value;
+            };
+            this.getBanco = function () {
+                return banco;
+            };
+            this.setBanco = function (value) {
+                banco = value;
+            };
+            this.getNumeroConta = function () {
+                return numeroConta;
+            };
+            this.setNumeroConta = function (value) {
+                numeroConta = value;
+            };
+            this.getSaldo = function () {
+                return saldo;
+            };
+            this.setSaldo = function (value) {
+                saldo = value;
+            };
+        }
+            function ContaCorrente() { // “subclasse”
+            var saldoEspecial;
+            this.getsaldoEspecial = function () {
+                return saldoEspecial;
+            };
+            this.setsaldoEspecial = function (value) {
+                saldoEspecial = value;
+            };
+        }
+           function ContaPoupanca() { // “subclasse”
+            var poupanca,dataVencimento;
+            this.getpoupanca = function () {
+                return poupanca;
+            };
+            this.setpoupanca = function (value) {
+                poupanca = value;
+            };
+            this.getdataVencimento = function () {
+                return dataVencimento;
+            };
+            this.setdataVencimento = function (value) {
+                dataVencimento = value;
+            };
+        }
+        ContaCorrente.prototype = new Conta();
+        ContaPoupanca.prototype = new Conta();
+
+        nContaCorrente = new ContaCorrente();
+        nContaPoupanca = new ContaPoupanca();
+
+        nContaCorrente.setNome('Joao');
+        nContaCorrente.setNumeroConta('123');
+        nContaCorrente.setBanco('Brasil');
+        nContaCorrente.setSaldo('1000');
+        nContaCorrente.setsaldoEspecial('2000');
+
+        nContaPoupanca.setNome('Felipe');
+        nContaPoupanca.setNumeroConta('321');
+        nContaPoupanca.setBanco('NuBank');
+        nContaPoupanca.setSaldo('200');
+        nContaPoupanca.setpoupanca('3%');
+        nContaPoupanca.setdataVencimento('12/11/2020');
+
+        alert(nContaCorrente.getNome() + '\n' + nContaCorrente.getBanco() + '\n' + nContaCorrente.getNumeroConta() + '\n' + nContaCorrente.getSaldo() + '\n' + nContaCorrente.getsaldoEspecial());
+        alert(nContaPoupanca.getNome() + '\n' + nContaPoupanca.getBanco() + '\n' + nContaPoupanca.getNumeroConta() + '\n' + nContaPoupanca.getSaldo() + '\n' + nContaPoupanca.getpoupanca() + '\n' + nContaPoupanca.getdataVencimento());
+
+    </script>
+
+</body>
+
+</html>
