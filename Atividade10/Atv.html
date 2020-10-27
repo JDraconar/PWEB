@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventos na Janela</title>
+</head>
+<body>
+	<div> <h1 style="color:black;" align="center">Abra a Janela!</h1>
+		<img src="JanelaFechada.jpg" id="janela" class="center" onmouseover="abraJanela(this)" onclick="quebraJanela(this)" onmouseout="fechaJanela(this)">
+
+		<script>
+			function abraJanela(obj) {
+			obj.src = 'JanelaAberta.jpg';
+		}
+			function quebraJanela(obj) {
+			obj.src = 'JanelaQuebrada.jpg';
+		}
+			function fechaJanela(obj) {
+			obj.src = 'JanelaFechada.jpg';
+		}
+		</script>
+	</div>
+</body>
+</html>
