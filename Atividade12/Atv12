@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Transforma Texto</title>
+</head>
+
+<body>
+    <form action="transforma" method="POST" name="form1" id="form1" onsubmit="return validarDados();">
+
+        <div id="main" width=200 heigth=200 align=center>
+            Texto:
+            <input name="idText" type="text" id="idText" size="52" maxlength="150">
+            <br>
+            <br>
+            Letras Maiúsculas <input type="checkbox" id="checkMai" name="checkMai" value="">
+            <br>
+            Letras Minúsculas <input type="checkbox" id="checkMin" name="checkMin" value="">
+            <br>
+            <br>
+            <br>
+            <input name="Submit" type="submit" form="form1" value="Submit">
+            <input name="Reset" type="reset" form="form1" value="Reset">
+        </div>
+    </form>
+
+    <script>
+        function validarDados() {
+            var texto = document.forms.form1.elements.idText.value
+            var chbx1 = document.getElementById("checkMai");
+            var chbx2 = document.getElementById("checkMin");
+    
+            if (chbx1.checked === true) {
+                var textoUpper = texto.toUpperCase();
+                alert(textoUpper);
+            }
+            if (chbx2.checked === true) {
+                var textoLower = texto.toLowerCase();
+                alert(textoLower);
+            }
+        }
+    </script>
+</body>
+
+</html>
