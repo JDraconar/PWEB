@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validar Dados</title>
+</head>
+
+<body>
+    <form action="validar" method="POST" name="form1" id="form1" onsubmit="return validarDados();">
+
+        <div style="background-color:dodgerblue;" id="main" width=200 heigth=200>
+            <h1>FORMULÁRIO PRINCIPAL</h1>
+            Nome:
+            <br>
+            <input name="idNome" type="text" id="idNome" size="52" maxlength="150">
+            <br>
+            <br>
+            E-Mail:
+            <br>
+            <input name="idEmail" type="email" id="idEmail" size="52" maxlength="150">
+            <br>
+            <br>
+            Comentário:
+            <br>
+            <textarea name="idComentario" cols="60" rows="3" id="idComentario" value="" input></textarea>
+            <br>
+            <br>
+            <br>
+            <label>PESQUISA: </label>
+            <br>
+            <br>
+            <label>A Primeira vez nesta página? </label>
+            <br>
+            <input type="radio" id="sim" name="simnao" value="Sim">
+            <label for="sim">Sim</label>
+            <input type="radio" id="nao" name="simnao" value="Nao">
+            <label for="nao">Não</label>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input name="Submit" type="submit" form="form1" value="Submit">
+        </div>
+    </form>
+
+    <script>
+        function validarDados() {
+            var rbn1 = document.getElementById("sim");
+            var rbn2 = document.getElementById("nao");
+
+            if (document.forms.form1.elements[0].value == "" || document.forms.form1.elements[0].length < 10) {
+                alert("O campo Nome está em branco ou contém menos de 10 caracteres");
+                document.forms.form1.elements[0].focus();
+                return false;
+            }
+            if (document.forms.form1.elements["idEmail"].value == "" || document.forms.form1.elements["idEmail"].value.indexOf('@') == -1 || document.forms.form1.elements["idEmail"].value.indexOf('.') == -1) {
+                alert("O campo E-Mail não possui valores válidos");
+                document.forms.form1.elements.idEmail.focus();
+               return false;
+            }
+            if (document.forms.form1.elements.idComentario.value == "" || document.forms.form1.elements.idComentario.value.length < 20) {
+                alert("O campo Comentário está em branco ou contém menos de 20 caracteres");
+                document.getElementById("idComentario").focus();
+                return false;
+            }
+            if (rbn1.checked === true) {
+                alert("Volte sempre à está página!");
+            }
+            if (rbn2.checked === true) {
+                alert("Que bom que você voltou a visitar esta página!");
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
